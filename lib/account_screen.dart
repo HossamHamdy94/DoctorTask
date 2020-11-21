@@ -24,7 +24,7 @@ class _Account_Screen extends State<Account_Screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(preferredSize: Size.fromHeight(150),child: CustomAppBar ("Accounts")),
-      body: Column(
+      body: Column(  mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Card(
             child: Container(
@@ -33,10 +33,10 @@ class _Account_Screen extends State<Account_Screen> {
                 children: <Widget>[
                   Text(
                     "Doctor",
-                    style: TextStyle(fontSize: 20, color: Colors.blue),
+                    style: TextStyle(fontSize: 20, color: Theme.of(context).primaryColor),
                   ),
                   Text("CardView",
-                      style: TextStyle(fontSize: 15, color: Colors.blue))
+                      style: TextStyle(fontSize: 20, color: Theme.of(context).primaryColor))
                 ],
               ),
             ),
