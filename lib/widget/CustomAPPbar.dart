@@ -19,11 +19,11 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
     final AccountsData = Provider.of<Accounts>(context);
     var accounts =   AccountsData.items;
     return SafeArea(
-      child: Container(height: 120, color: Colors.deepPurpleAccent,
+      child: Container(height: 130, color: Colors.indigoAccent,
         child: Column(
           children: <Widget>[
              AppBar(
-               backgroundColor: Colors.deepPurpleAccent,
+               backgroundColor: Colors.indigoAccent,
               title: Text('All Accounts'),
               actions: <Widget>[
                 IconButton(
@@ -110,7 +110,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
               ],
             ),
 
-            Container(child: Card(color: Colors.deepPurpleAccent,child: TextField (decoration: InputDecoration(suffixIcon:Icon(Icons.search),))))
+            Container(child: Card(color: Colors.indigoAccent,child: TextField (style: TextStyle(color: Colors.white),decoration: InputDecoration(labelStyle: TextStyle( color:Colors.white),labelText:"Search by category" ,suffixIcon:Icon(Icons.search),))))
 
 
 
