@@ -1,4 +1,3 @@
-import 'package:dcotortask/Providers/Accounts.dart';
 import 'file:///D:/apps/dcotortask/lib/Providers/account_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -8,6 +7,7 @@ class ListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final account = Provider.of<Account>(context, listen: false);
+    Color mycolor = Theme.of(context).primaryColor ;
 
     return Card(
       child: Container(
@@ -43,7 +43,7 @@ class ListItem extends StatelessWidget {
                             padding: const EdgeInsets.only(left: 15, top: 3.0),
                             child: Row(
                               children: <Widget>[
-                                Icon(Icons.location_on,color: Colors.blue),
+                                Icon(Icons.location_on,color: mycolor),
                                 Text(account.distance.toString(),
                                 style: TextStyle(color: Colors.black45),)
                               ],
@@ -55,9 +55,9 @@ class ListItem extends StatelessWidget {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Row (children: <Widget>[  Icon(Icons.star ,color: Colors.blue,),
+                    Row (children: <Widget>[  Icon(Icons.star ,color: mycolor,),
                       Text(account.rate.toString(),
-                        style: TextStyle(color: Colors.blue))
+                        style: TextStyle(color: mycolor))
                     ],),
 
                   ],
@@ -69,12 +69,12 @@ class ListItem extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-            Icon(Icons.camera,color: Colors.blue),
+            Icon(Icons.camera,color: mycolor),
               Row (children: <Widget>[
                 Icon(Icons.markunread_mailbox,color: Colors.grey),
             Padding(
               padding: const EdgeInsets.only(left: 20),
-              child: Icon(Icons.chat_bubble,color: Colors.blue),
+              child: Icon(Icons.chat_bubble,color: mycolor),
             )
 
               ],)
