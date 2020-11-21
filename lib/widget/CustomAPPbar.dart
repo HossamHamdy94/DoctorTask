@@ -19,18 +19,14 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
     final AccountsData = Provider.of<Accounts>(context);
     var accounts =   AccountsData.items;
     return SafeArea(
-      child: Container(height: 130, color: Colors.indigoAccent,
+      child: Container(height: 150, color: Color.fromRGBO(101, 116, 207,1),
         child: Column(
           children: <Widget>[
-             AppBar(
-               backgroundColor: Colors.indigoAccent,
-              title: Text('All Accounts'),
-              actions: <Widget>[
-                IconButton(
-                  icon: Icon(
-                    Icons.menu,
-                  ),
-                ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,children: <Widget>[
+
+                Text("All Acounts",style: TextStyle(fontSize: 20,color: Colors.white),),
                 IconButton(
                   onPressed: () => showModalBottomSheet(
                       context: context,
@@ -61,8 +57,8 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                                           Icons.location_on,
                                         ),
                                         onPressed: () {
-                                         accounts = AccountsData.getDoctors ;
-                                         Navigator.pop(context);
+                                          accounts = AccountsData.getDoctors ;
+                                          Navigator.pop(context);
 
 
                                         },
@@ -73,12 +69,12 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                                   Column(
                                     children: <Widget>[
                                       IconButton(
-                                        icon: Icon(Icons.star),
-                                        onPressed: () {
-                                          accounts = AccountsData.getPatient ;
-                                          Navigator.pop(context);
+                                          icon: Icon(Icons.star),
+                                          onPressed: () {
+                                            accounts = AccountsData.getPatient ;
+                                            Navigator.pop(context);
 
-                                        }),
+                                          }),
                                       Text("Show Patients Only")
                                     ],
                                   ),
@@ -104,19 +100,37 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                         );
                       }),
                   icon: Icon(
-                    Icons.find_in_page,
+
+                    Icons.photo_filter,
                   ),
                 ),
-              ],
+
+              ],)),
+            )
+            //  AppBar(
+            //    backgroundColor: Color.fromRGBO(101, 116, 207,1),
+            //   title: Text('All Accounts'),
+            //   actions: <Widget>[
+            //     IconButton(
+            //       icon: Icon(
+            //         Icons.menu,
+            //       ),
+            //     ),
+
+            ,Container(child: Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: Card(shape:RoundedRectangleBorder( side: BorderSide(color: Colors.white70, width: 1),
+                  borderRadius: BorderRadius.circular(15.0)),color: Color.fromRGBO(125, 138, 214,1),child: TextField (style: TextStyle(color: Colors.white),decoration: InputDecoration(labelStyle: TextStyle( color:Colors.white),labelText:"Search by category" ,suffixIcon:Icon(Icons.search),))),
+            ))  ],
             ),
 
-            Container(child: Card(color: Colors.indigoAccent,child: TextField (style: TextStyle(color: Colors.white),decoration: InputDecoration(labelStyle: TextStyle( color:Colors.white),labelText:"Search by category" ,suffixIcon:Icon(Icons.search),))))
 
 
 
-          ],
+
+
         ),
-      ),
+
     );
   }
 }
