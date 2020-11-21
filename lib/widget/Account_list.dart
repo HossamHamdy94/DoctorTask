@@ -1,5 +1,5 @@
-import 'package:dcotortask/Accounts.dart';
-import 'package:dcotortask/List_item.dart';
+import 'file:///D:/apps/dcotortask/lib/widget/List_item.dart';
+import 'package:dcotortask/Providers/Accounts.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

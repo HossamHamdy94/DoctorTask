@@ -1,5 +1,5 @@
-import 'package:dcotortask/Accounts.dart';
-import 'package:dcotortask/account_model.dart';
+import 'package:dcotortask/Providers/Accounts.dart';
+import 'file:///D:/apps/dcotortask/lib/Providers/account_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

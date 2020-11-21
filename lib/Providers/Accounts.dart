@@ -1,4 +1,4 @@
-import 'package:dcotortask/account_model.dart';
+import 'file:///D:/apps/dcotortask/lib/Providers/account_model.dart';
 import 'package:flutter/material.dart';
 
 class Accounts with ChangeNotifier {

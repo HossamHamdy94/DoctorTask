@@ -1,8 +1,9 @@
-import 'package:dcotortask/Accounts.dart';
 import 'package:dcotortask/Splash_Screen.dart';
 import 'package:dcotortask/account_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import 'Providers/Accounts.dart';
 
 void main() {
   runApp(MyApp());
