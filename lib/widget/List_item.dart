@@ -4,11 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ListItem extends StatelessWidget {
-  final String Name;
-  final String Job;
-  final String imageUrl;
-
-  ListItem(this.Name, this.Job, this.imageUrl);
 
   @override
   Widget build(BuildContext context) {
@@ -31,18 +26,18 @@ class ListItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
                     CircleAvatar(
-                      backgroundImage: NetworkImage(imageUrl),
+                      backgroundImage: NetworkImage(account.imageUrl),
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Padding(
                           padding: const EdgeInsets.only(top: 5, left: 8.0),
-                          child: Text(Name),
+                          child: Text(account.name),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 8, top: 5.0),
-                          child: Text(Job,style:TextStyle(color: Colors.black45),),
+                          child: Text(account.job,style:TextStyle(color: Colors.black45),),
                         ),
                         Padding(
                             padding: const EdgeInsets.only(left: 15, top: 3.0),

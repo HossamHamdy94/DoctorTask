@@ -1,12 +1,9 @@
+import 'package:dcotortask/widget/CustomAPPbar.dart';
 import 'package:flutter/material.dart';
 
 import 'widget/Account_list.dart';
 
-enum FilterOptions {
-  patients,
-  Doctor,
-  All,
-}
+
 
 class Account_Screen extends StatefulWidget {
   static const routeName = 'Account_Screen';
@@ -16,108 +13,17 @@ class Account_Screen extends StatefulWidget {
 }
 
 class _Account_Screen extends State<Account_Screen> {
-  bool showdoctors = false;
 
-  bool showpatient = false;
-
+  _Account_Screen ()
+;
   @override
   void initState() {
     super.initState();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('All Accounts'),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.menu,
-            ),
-          ),
-          IconButton(
-            onPressed: () => showModalBottomSheet(
-                context: context,
-                builder: (_) {
-                  return Scaffold(
-                    body: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Text("Clear"),
-                            Text(
-                              "SortBy",
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 20),
-                            ),
-                            Text("Done"),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Column(
-                              children: <Widget>[
-                                IconButton(
-                                  icon: Icon(
-                                    Icons.location_on,
-                                  ),
-                                  onPressed: () {
-                                    setState(() {
-                                      showdoctors = true;
-                                      showpatient = false;
-                                    });
-                                  },
-                                ),
-                                Text("Show Doctors Only")
-                              ],
-                            ),
-                            Column(
-                              children: <Widget>[
-                                IconButton(
-                                  icon: Icon(Icons.star),
-                                  onPressed: () {
-                                    setState(() {
-                                      showdoctors = false;
-                                      showpatient = true;
-                                    });
-                                  },
-                                ),
-                                Text("Show Patients Only")
-                              ],
-                            ),
-                            Column(
-                              children: <Widget>[
-                                IconButton(
-                                  icon: Icon(Icons.accessibility),
-                                  onPressed: () {
-                                    setState(() {
-                                      showpatient = false;
-                                      showdoctors = false;
-                                    });
-                                  },
-                                ),
-                                Text("Show  ALL")
-                              ],
-                            )
-                          ],
-                        ),
-                        Row(
-                          children: <Widget>[],
-                        ),
-                      ],
-                    ),
-                  );
-                }),
-            icon: Icon(
-              Icons.find_in_page,
-            ),
-          ),
-        ],
-      ),
+      appBar: PreferredSize(preferredSize: Size.fromHeight(150),child: CustomAppBar ("Accounts")),
       body: Column(
         children: <Widget>[
           Card(
@@ -135,11 +41,8 @@ class _Account_Screen extends State<Account_Screen> {
               ),
             ),
           ),
-          Expanded(child: Account_List(showdoctors, showpatient))
+          Expanded(child: Account_List())
       ,
-
-
-
 
 
         ],
