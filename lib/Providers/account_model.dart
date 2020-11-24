@@ -1,4 +1,5 @@
-import 'package:flutter/foundation.dart';
+
+import 'package:flutter/material.dart';
 
 class Account with ChangeNotifier {
   final String name;

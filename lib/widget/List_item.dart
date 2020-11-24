@@ -8,7 +8,6 @@ class ListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final account = Provider.of<Account>(context, listen: false);
     Color mycolor = Theme.of(context).primaryColor ;
-
     return Card(
       child: Container(
         decoration: BoxDecoration(

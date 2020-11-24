@@ -5,21 +5,12 @@ import 'widget/Account_list.dart';
 
 
 
-class Account_Screen extends StatefulWidget {
+class Account_Screen extends StatelessWidget {
   static const routeName = 'Account_Screen';
 
   @override
-  _Account_Screen createState() => _Account_Screen();
-}
+  Account_Screen createState() => Account_Screen();
 
-class _Account_Screen extends State<Account_Screen> {
-
-  _Account_Screen ()
-;
-  @override
-  void initState() {
-    super.initState();
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
